@@ -1,0 +1,14 @@
+
+general:
+  # If toggled off enchantment levels will be like 1, 2, 3, 4, 5 instead of I, II, III, IV, V.
+  roman-numeral-levels: true
+
+
+# This item will be used as the enchanting medium so basically like an enchanted book
+# {enchantment-name} will be the name of the enchantment, formatted with a specific colorcode.
+# {level} will be a Roman Numeral such as I, II, III, IV, or just normal integers such as 1, 2, 3, 4.
+enchantment-medium:
+  type: ENCHANTED_BOOK
+  name: '{enchantment-name} {level}'
+  lore:
+    - 'Drag n'' Drop on any {applicable-types}'

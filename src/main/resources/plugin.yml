@@ -1,0 +1,5 @@
+name: SavageEnchants
+api-version: 1.13
+version: 1.0
+author: ProSavage
+main: net.prosavage.savageenchants.SavageEnchants
