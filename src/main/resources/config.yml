@@ -11,4 +11,8 @@ enchantment-medium:
   type: ENCHANTED_BOOK
   name: '{enchantment-name} {level}'
   lore:
-    - 'Drag n'' Drop on any {applicable-types}'
+    - 'Drag n'' Drop on any {applicable-type}'
+
+enchantment-item:
+  enchantment-line: '{enchantment-name} {level}'
+

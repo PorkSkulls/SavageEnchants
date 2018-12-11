@@ -1,8 +1,11 @@
 package net.prosavage.savageenchants.utils;
 
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public enum EnchanteeType {
 
@@ -51,19 +54,59 @@ public enum EnchanteeType {
                    MultiversionMaterials.GOLDEN_PICKAXE.parseMaterial(),
                    MultiversionMaterials.IRON_PICKAXE.parseMaterial(),
                    MultiversionMaterials.WOODEN_PICKAXE.parseMaterial()),
-   SHEARS(MultiversionMaterials.SHEARS.parseMaterial());
+   SHEARS(MultiversionMaterials.SHEARS.parseMaterial()),
+   ARMOR(MultiversionMaterials.CHAINMAIL_HELMET.parseMaterial(),
+           MultiversionMaterials.DIAMOND_HELMET.parseMaterial(),
+           MultiversionMaterials.GOLDEN_HELMET.parseMaterial(),
+           MultiversionMaterials.IRON_HELMET.parseMaterial(),
+           MultiversionMaterials.LEATHER_HELMET.parseMaterial(),
+           MultiversionMaterials.CHAINMAIL_CHESTPLATE.parseMaterial(),
+           MultiversionMaterials.DIAMOND_CHESTPLATE.parseMaterial(),
+           MultiversionMaterials.GOLDEN_CHESTPLATE.parseMaterial(),
+           MultiversionMaterials.IRON_CHESTPLATE.parseMaterial(),
+           MultiversionMaterials.LEATHER_CHESTPLATE.parseMaterial(),
+           MultiversionMaterials.CHAINMAIL_LEGGINGS.parseMaterial(),
+           MultiversionMaterials.DIAMOND_LEGGINGS.parseMaterial(),
+           MultiversionMaterials.GOLDEN_LEGGINGS.parseMaterial(),
+           MultiversionMaterials.IRON_LEGGINGS.parseMaterial(),
+           MultiversionMaterials.LEATHER_LEGGINGS.parseMaterial(),
+           MultiversionMaterials.CHAINMAIL_BOOTS.parseMaterial(),
+           MultiversionMaterials.DIAMOND_BOOTS.parseMaterial(),
+           MultiversionMaterials.GOLDEN_BOOTS.parseMaterial(),
+           MultiversionMaterials.IRON_BOOTS.parseMaterial(),
+           MultiversionMaterials.LEATHER_BOOTS.parseMaterial()),
+   WEAPON(MultiversionMaterials.STONE_SWORD.parseMaterial(),
+           MultiversionMaterials.DIAMOND_SWORD.parseMaterial(),
+           MultiversionMaterials.GOLDEN_SWORD.parseMaterial(),
+           MultiversionMaterials.IRON_SWORD.parseMaterial(),
+           MultiversionMaterials.WOODEN_SWORD.parseMaterial(),
+           MultiversionMaterials.STONE_AXE.parseMaterial(),
+           MultiversionMaterials.DIAMOND_AXE.parseMaterial(),
+           MultiversionMaterials.GOLDEN_AXE.parseMaterial(),
+           MultiversionMaterials.IRON_AXE.parseMaterial(),
+           MultiversionMaterials.WOODEN_AXE.parseMaterial());
 
 
 
 
 
-   private ArrayList<Material> applicableTypes;
+   private Set<Material> applicableTypes = new HashSet<>();
 
 
    private EnchanteeType(Material... types) {
       for (Material material : types) {
          applicableTypes.add(material);
       }
+   }
+
+
+   public String formattedName() {
+      return this.toString().toLowerCase();
+   }
+
+
+   public boolean isApplicable(ItemStack itemStack) {
+      return applicableTypes.contains(itemStack.getType());
    }
 
 

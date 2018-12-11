@@ -3,7 +3,9 @@ package net.prosavage.savageenchants.utils.nbt;
 
 
 
-import net.prosavage.savageenchants.nbt.utils.MinecraftVersion;
+
+
+import net.prosavage.savageenchants.utils.nbt.utils.MinecraftVersion;
 
 import java.util.Set;
 
@@ -41,6 +43,7 @@ public class NBTCompound {
     public void setString(String key, String value) {
         NBTReflectionUtil.setString(this, key, value);
     }
+
 
     public String getString(String key) {
         return NBTReflectionUtil.getString(this, key);

@@ -26,6 +26,10 @@ public enum Enchantment {
       this.maxLevel = maxLevel;
    };
 
+   public String getFormattedName() {
+      return formattedName;
+   }
+
 
 
 }
