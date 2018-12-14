@@ -1,9 +1,9 @@
 package net.prosavage.savageenchants.utils.nbt;
 
 
-import net.prosavage.savageenchants.nbt.utils.GsonWrapper;
-import net.prosavage.savageenchants.nbt.utils.MethodNames;
-import net.prosavage.savageenchants.nbt.utils.MinecraftVersion;
+import net.prosavage.savageenchants.utils.nbt.utils.GsonWrapper;
+import net.prosavage.savageenchants.utils.nbt.utils.MethodNames;
+import net.prosavage.savageenchants.utils.nbt.utils.MinecraftVersion;
 import org.bukkit.Bukkit;
 import org.bukkit.block.BlockState;
 import org.bukkit.entity.Entity;

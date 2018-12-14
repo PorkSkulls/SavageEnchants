@@ -1,9 +1,7 @@
 package net.prosavage.savageenchants.utils.nbt;
 
 
-
-
-import net.prosavage.savageenchants.nbt.utils.MethodNames;
+import net.prosavage.savageenchants.utils.nbt.utils.MethodNames;
 
 import java.lang.reflect.Method;
 
