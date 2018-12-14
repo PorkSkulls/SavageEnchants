@@ -29,7 +29,7 @@ public class RomanNumber {
    public final static String toRoman(int number) {
       // Check if the option for roman numerals is false if so, just return number.
       // Added this here so I dont have to check every time I use this method.
-      if (!SavageEnchants.instance.getConfig().getBoolean("general.roman-numeral-levels")) {
+      if (!SavageEnchants.instance.getConfig().getBoolean("general.romannumerallevels")) {
          return number + "";
       }
       int l =  map.floorKey(number);
