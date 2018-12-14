@@ -2,8 +2,6 @@ package net.prosavage.savageenchants.utils;
 
 import net.prosavage.savageenchants.EnchantmentMedium;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
