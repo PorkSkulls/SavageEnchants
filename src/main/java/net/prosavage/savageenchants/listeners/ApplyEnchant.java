@@ -2,7 +2,6 @@ package net.prosavage.savageenchants.listeners;
 
 import net.prosavage.savageenchants.EnchantmentMedium;
 import net.prosavage.savageenchants.SavageEnchants;
-import net.prosavage.savageenchants.utils.Enchantment;
 import net.prosavage.savageenchants.utils.ItemBuilder;
 import net.prosavage.savageenchants.utils.MultiversionMaterials;
 import net.prosavage.savageenchants.utils.nbt.NBTItem;
@@ -14,6 +13,12 @@ import org.bukkit.inventory.ItemStack;
 
 public class ApplyEnchant implements Listener {
 
+
+   private SavageEnchants instance;
+
+   public ApplyEnchant(SavageEnchants instance) {
+      this.instance = instance;
+   }
 
 
    @EventHandler
@@ -41,7 +46,7 @@ public class ApplyEnchant implements Listener {
       nbtItem.setInteger(enchantmentMedium.getEnchantment().name(), enchantmentMedium.getLevel());
       ItemStack newAppliedItem = nbtItem.getItem();
       ItemBuilder itemBuilder = new ItemBuilder(newAppliedItem);
-      itemBuilder.addLineToLore(SavageEnchants.instance.getConfig().getString("enchantment-item.enchantment-line"));
+      itemBuilder.addLineToLore(instance.getConfig().getString("enchantment-item.enchantment-line"));
       event.setCurrentItem(itemBuilder.build());
    }
 
