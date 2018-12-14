@@ -43,12 +43,12 @@ public class EnchantmentMedium {
 
 
    public ItemStack createItem() {
-      ItemStack itemStack = new ItemStack(Material.matchMaterial(SavageEnchants.instance.getConfig().getString("enchantment-medium.type", "ENCHANTED_BOOK")));
+      ItemStack itemStack = new ItemStack(Material.matchMaterial(SavageEnchants.instance.getConfig().getString("enchantmentmedium.type", "ENCHANTED_BOOK")));
       ItemMeta itemMeta = itemStack.getItemMeta();
-      List<String> lore = SavageEnchants.instance.getConfig().getStringList("enchantment-medium.lore");
+      List<String> lore = SavageEnchants.instance.getConfig().getStringList("enchantmentmedium.lore");
       lore = Util.applyPlaceholders(lore, this);
       itemMeta.setLore(Util.color(lore));
-      itemMeta.setDisplayName(Util.color(Util.applyPlaceholders(SavageEnchants.instance.getConfig().getString("enchantment-medium.name"), this)));
+      itemMeta.setDisplayName(Util.color(Util.applyPlaceholders(SavageEnchants.instance.getConfig().getString("enchantmentmedium.name"), this)));
       itemStack.setItemMeta(itemMeta);
       NBTItem nbtItem = new NBTItem(itemStack);
       nbtItem.setBoolean("CE", true);
