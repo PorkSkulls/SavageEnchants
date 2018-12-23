@@ -1,5 +1,6 @@
 package net.prosavage.savageenchants;
 
+import net.prosavage.savageenchants.command.CommandManager;
 import net.prosavage.savageenchants.listeners.ApplyEnchant;
 import net.prosavage.savageenchants.storage.Configuration;
 import net.prosavage.savageenchants.storage.Lang;
@@ -11,10 +12,9 @@ import java.util.logging.Logger;
 public class SavageEnchants extends JavaPlugin {
 
    public static SavageEnchants instance;
-
-
-  public static Logger logger;
-  private Listener[] eventListeners;
+   public static Logger logger;
+   private Listener[] eventListeners;
+   private CommandManager commandManager;
 
    @Override
    public void onEnable() {
@@ -36,6 +36,7 @@ public class SavageEnchants extends JavaPlugin {
               new ApplyEnchant(this)
       };
       logger.info("Registering Commands...");
+      this.commandManager = new CommandManager(this);
 
 
 
@@ -46,12 +47,18 @@ public class SavageEnchants extends JavaPlugin {
 
 
       logger.info("All Done, Enjoy <3");
+
       instance = this;
    }
 
    @Override
    public void onDisable() {
 
+   }
+
+
+   public CommandManager getCommandManager() {
+      return this.commandManager;
    }
 
 

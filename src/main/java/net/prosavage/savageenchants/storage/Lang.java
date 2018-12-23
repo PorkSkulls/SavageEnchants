@@ -6,14 +6,17 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static net.prosavage.savageenchants.SavageEnchants.instance;
 
 public enum Lang {
 
    GENERAL_PREFIX("&7(&c!&7) "),
+   GENERAL_COMMANDINVALID("&7This command does &cnot &7exist."),
+   GENERAL_INVALIDSYNTAX("&cInvalid Syntax&7: Valid Syntax is &c{valid-syntax}&7."),
+   GENERAL_COMMANDFORMAT("&8 - &a {valid-syntax} &7 -  + {command-description}"),
+   GENERAL_NOPERMISSIONS("&7You do &cnot &7have permission to perform this action."),
+   GENERAL_PLAYERDOESNOTEXIST("&7This player does &cnot &7exist."),
+   GENERAL_ENCHANTMENTDOESNOTEXIST("&7This enchantment does not exist!"),
    GENERAL_ITEMENCHANTED("&cYou have enchanted an item!");
 
 
